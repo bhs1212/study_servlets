@@ -1,0 +1,12 @@
+/* body {
+  padding: 1rem;
+} */
+
+* {
+  border: 0.1rem solid gray;
+}
+
+.border-style {
+  text-align: center;
+  padding: 1rem;
+}
