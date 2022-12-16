@@ -13,16 +13,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/tablesListSerblets")
-public class TablesListSerblets extends HttpServlet {
+@WebServlet(urlPatterns = "/tablesBundleServlets")
+public class TablesBundleServlets extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest reqeust, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         DatasInfor datasInfor = new DatasInfor();
-        ArrayList<String> tablesListWithString = datasInfor.getTablesListWithString();
-        PrintWriter printWriter = response.getWriter();
+        HashMap<String, Object> bundlesData = datasInfor.getBundlesData();
+        ArrayList<String> tablesListWithString = (ArrayList<String>) bundlesData.get("tablesListWithString");
+        HashMap<String, String> searchForm = (HashMap<String, String>) bundlesData.get("searchForm");
         
-        HashMap<String, String> searchForm =  datasInfor.getSearchFormData();
+        PrintWriter printWriter = response.getWriter();
         printWriter.println("<html lang='en'>");
         printWriter.println("<head>");
         printWriter.println(" <title>"+searchForm.get("search_key")+"</title>");
@@ -35,7 +36,7 @@ public class TablesListSerblets extends HttpServlet {
         printWriter.println("</head>");
         printWriter.println("<body>");
         printWriter.println("<div class='container'>");
-        printWriter.println(" <div class='fs-3'>Tables Normal</div>");
+        printWriter.println("<div class='fs-3'>Tables Normal with Bundle</div>");
         printWriter.println("<table class='table'>");
         printWriter.println(" <thead>");
         printWriter.println("<tr>");
