@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.HashMap" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,12 +9,19 @@
     <title>Document</title>
   </head>
   <body>
+  <% 
+    HashMap<String, Object> question = (HashMap<String, Object>) request.getAttribute("question"); 
+  %>
     <div>
-      <a href="/poll/PollServlet?QUESTIONS_UID=2">Prev</a>
-      Current Number : 3
-      <a href="/poll/PollServlet?QUESTIONS_UID=4">Next</a>
+      <a href="/polls/PollServlet?QUESTIONS_UID=Q1">Q1</a> /
+      <a href="/polls/PollServlet?QUESTIONS_UID=Q2">Q2</a> /
+      <a href="/polls/PollServlet?QUESTIONS_UID=Q3">Q3</a> /
+      <a href="/polls/PollServlet?QUESTIONS_UID=Q4">Q4</a> /
+      <a href="/polls/PollServlet?QUESTIONS_UID=Q5">Q5</a> 
     </div>
-    <div>2. 주문시 직원은 고객님께 친절 하였습니까?</div>
+    <div>
+      <%= question.get("ORDERS") %>. <%= question.get("QUESTIONS")%>
+    </div>
     <div>(1) 전혀 아니다 (2) 아니다 (3) 보통이다</div>
   </body>
 </html>
