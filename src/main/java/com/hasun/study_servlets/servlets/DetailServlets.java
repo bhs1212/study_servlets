@@ -37,6 +37,7 @@ public class DetailServlets extends HttpServlet {
 
         // output with html
         request.setAttribute("question", question);
+
         
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/polls/details.jsp");
         requestDispatcher.forward(request, response);
