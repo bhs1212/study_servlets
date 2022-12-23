@@ -35,7 +35,7 @@ public class CreateSessionJSPServlets extends HttpServlet {
        // httpSession = request.getSession();  // 무조건 인스턴화
 
        String path = null;
-       if("yojulab".equals(username) && "1234".equals(password)){
+       if("hasun".equals(username) && "1234".equals(password)){
            // login
            httpSession = request.getSession(false);  // 존재하면 인스턴스화
            if (httpSession == null){
@@ -43,6 +43,10 @@ public class CreateSessionJSPServlets extends HttpServlet {
                httpSession.setAttribute("username", username);
                httpSession.setAttribute("password", password);
            }
+           
+           System.out.println(httpSession.getAttribute("username"));
+           System.out.println(httpSession.getId());
+
            path = "/session/checkLogin.jsp";
        } else {
            // logout
@@ -50,6 +54,9 @@ public class CreateSessionJSPServlets extends HttpServlet {
            if (httpSession != null){
                httpSession.invalidate();
            }
+        //    System.out.println(httpSession.getAttribute("username"));
+           System.out.println(httpSession.getId());
+
            path = "/session/checkLogout.jsp";
        }
        RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
