@@ -9,15 +9,15 @@
   <body>
     <div>index.html</div>
     <div>
-      <a href="/helloWorldServlets?firstName=Hasun&secondName=Bae"
-        >helloWorldServlets?firstName=Hasun&secondName=Bae</a
+      <a href="/helloWorldServlets?firstName=Sanghun&secondName=Oh"
+        >helloWorldServlets?firstName=Sanghun&secondName=Oh</a
       >
     </div>
     <div>
       <a href="/searchFormServlet">searchFormServlet</a>
     </div>
     <div>
-      <a href="/tablesListSerblets">tablesListSerblets</a>
+      <a href="/tablesListServlets">tablesListServlets</a>
     </div>
     <div>
       <a href="/tablesBundleServlets">tablesBundleServlets</a>
@@ -36,35 +36,56 @@
       <form action="/searchFormServlet" method="get">
         <button>searchFormServlet</button>
       </form>
-      <form action="/tablesListSerblets" method="get">
-        <button>tablesListSerblets</button>
-      </form>
-      <form action="/tablesBundleServlets" method="get">
-        <button>tablesBundleServlets</button>
+      <form action="/tablesListServlets" method="get">
+        <button>tablesListServlets</button>
       </form>
       <form action="/tablesBeanListServlets" method="get">
         <button>tablesBeanListServlets</button>
       </form>
     </div>
     <div>
-      <a href="/simple/WithDBServlets">simple/WithDBServlets</a>
+      <a href="/simple/WithDBServlets"
+        >/simple/WithDBServlets SimpleWithDBServlets.java</a
+      >
     </div>
     <div>
-      <a href="/cookies/createServlets">CreateCookieServlets</a>
+      <a href="/session/createServlets?username=yojulab&password=1234"
+        >/cookies/createServlets CreateCookieServlets.java</a
+      >
     </div>
     <div>
-      <a href="/cookies/getAndDeleteServlets">GetAndDeleteCookieServlets</a>
+      <a href="/cookies/getAndDeleteServlets"
+        >/cookies/getAndDeleteServlets GetAndDeleteCookieServlets.java</a
+      >
     </div>
     <div>
-      <a href="/session/createServlets">CreateSessionServlets</a>
+      <a href="/session/createServlets"
+        >/session/createServlets CreateSessionServlets.java</a
+      >
     </div>
     <div>
-      <a href="/dispatcherServlets">DispatcherServlets</a>
+      <a href="/dispatcherServlets"
+        >/dispatcherServlets DispatcherServlets.java</a
+      >
     </div>
     <div>
-      <a href="/dispatcherJSPServlets">DispatcherJSPServlets</a>
+      <a href="/dispatcherJSPServlets"
+        >/dispatcherJSPServlets DispatcherJSPServlets.java search_form.jsp</a
+      >
     </div>
-    <hr />
+    <div>
+      <a href="/session/createServlets?username=yojulab&password=1234"
+        >/session/createServlets?username=yojulab&password=1234
+        CreateSessionServlets.java</a
+      >
+    </div>
+    <div>
+      <form action="/session/createServlets" method="post">
+        <input type="text" name="username" id="" value="hasun" />
+        <input type="text" name="password" id="" value="1234" />
+        <button>/session/CreateServlets with post</button>
+      </form>
+    </div>
     <div>Cases</div>
     <div>
       <a href="/polls/PollServlet?QUESTIONS_UID=Q1"
